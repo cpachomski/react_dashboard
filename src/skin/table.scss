@@ -1,0 +1,50 @@
+$blue: #2da29d;
+$teal: rgb(203, 223, 223);
+
+.table {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  height: 50%;
+  overflow-y: scroll;
+  width: 100%;
+
+
+  .row {
+    background-color: white;
+    height: 50px;
+    &:first-child {
+      position: fixed;
+      top: 50%;
+      width: 100%;
+      line-height: 50px;
+      background-color: $blue !important;
+      > span {
+        text-transform: uppercase;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: 50px;
+    }
+
+    &:nth-of-type(even){
+      background-color: gray;
+    }
+    &:nth-of-type(odd){
+      background-color: $teal;
+    }
+
+
+
+    > span {
+      display: inline-block;
+      width: calc((100% / 6) - 30px);
+      margin: 0px 15px;
+      text-align: center;
+      color: white;
+      font-family: 'verdana';
+    }
+  }
+
+}
