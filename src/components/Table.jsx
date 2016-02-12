@@ -1,6 +1,7 @@
 import React from 'react';
 import Immutable from 'immutable';
 import TableRow from './TableRow.jsx';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 
 import tabelStyles from '../skin/table.scss';
@@ -8,6 +9,7 @@ import tabelStyles from '../skin/table.scss';
 
 export default React.createClass({
   displayName: 'data-table',
+  mixins: [PureRenderMixin],
 
   getInitialState () {
     return {
@@ -32,8 +34,9 @@ export default React.createClass({
 
 
     this.setState({
-      filtereData: filtered
+      filteredData: filtered
     });
+
   },
 
 
