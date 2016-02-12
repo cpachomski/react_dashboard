@@ -20,6 +20,7 @@
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.2.0",
     "react-addons-pure-render-mixin": "^0.14.7",
+    "react-addons-update": "^0.14.7",
     "sass-loader": "^1.0.2",
     "skeleton-css-webpack": "^2.0.4",
     "style-loader": "^0.12.3",

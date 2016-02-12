@@ -2,9 +2,11 @@ import React from 'react';
 import Immutable from 'immutable';
 import TableRow from './TableRow.jsx';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import $ from 'jquery';
 
 
 import tabelStyles from '../skin/table.scss';
+
 
 
 export default React.createClass({
@@ -27,16 +29,14 @@ export default React.createClass({
 
   filterData (e) {
     e.preventDefault();
+    console.log('filter run');
     const regex = new RegExp(e.target.value, 'i');
     const filtered = this.state.dataList.filter( (customerDatum) => {
       return (customerDatum.get('first_name').search(regex) > -1);
     });
-
-
     this.setState({
       filteredData: filtered
     });
-
   },
 
 
@@ -46,7 +46,7 @@ export default React.createClass({
       return (
         <TableRow key={customerDatum.get('id')} className='body-row'
             firstName={customerDatum.get('first_name') ? customerDatum.get('first_name') : 'N/A'}
-            lastName={customerDatum.get('last_name') ? customerDatum.last_name : 'N/A'}
+            lastName={customerDatum.get('last_name') ? customerDatum.get('last_name') : 'N/A'}
             gender={customerDatum.get('gender') ? customerDatum.get('gender') : 'N/A'}
             companyName={customerDatum.get('company_name') ? customerDatum.get('company_name') : 'N/A'}
             jobTitle={customerDatum.get('job_title') ? customerDatum.get('job_title') : 'N/A'}
@@ -59,8 +59,10 @@ export default React.createClass({
         <input
           type='text'
           className='table-search'
-          onChange={ this.filterData}
+          onChange={this.filterData}
           placeholder="Search" />
+
+        <button onClick={this.props.addCustomerDatum}> Add Row </button>
 
         <div className='table'>
           <TableRow className='header-row'

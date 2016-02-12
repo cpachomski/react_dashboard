@@ -12,6 +12,19 @@ $light-gray: #AFAFAF;
     width: 100%;
     z-index: 5;
     background-color: $light-gray;
+
+    > button {
+      position: fixed;
+      top: calc(70% - 65px);
+      right: 15px;
+      height: 50px;
+      line-height: 35px;
+      background-color: $blue;
+      color: white;
+      border: none;
+      width: 100px;
+      font-size: 20px;
+    }
 }
 
 .table-search{
@@ -33,7 +46,7 @@ $light-gray: #AFAFAF;
     background-color: white;
     &:first-of-type {
       position: fixed;
-      top: 60%;
+      top: 70%;
       width: 100%;
       line-height: 50px;
       background-color: $blue !important;

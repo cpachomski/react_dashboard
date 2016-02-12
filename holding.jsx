@@ -4,3 +4,6 @@
       });
       console.log(JSON.stringify(this.state.dataList));
 });
+ this.setState({
+        dataList: this.props.dataList).toList()
+      });

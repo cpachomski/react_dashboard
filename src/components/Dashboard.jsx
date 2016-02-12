@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import Table from './Table.jsx';
+import UpdateState from 'react-addons-update';
 
 import DoggyData from  '../doggy_data/DogTreatsRUsData.jsx';
 
@@ -10,6 +11,8 @@ import mainStyles from '../skin/main.scss';
 
 
 const apiHit = 'https://mockaroo.com/e7995d70/download?count=5000&key=015777f0';
+
+const addCustomerHit = 'https://mockaroo.com/e7995d70/download?count=1&key=015777f0';
 
 
 
@@ -22,8 +25,23 @@ export default React.createClass({
     }
   },
 
-  render () {
+  addCustomerDatum () {
+    let oldDataList = this.state.dataList;
+    $.get(addCustomerHit, (newDatum) => {
+      // console.log(newDatum[0].first_name + ' ' + newDatum[0].last_name + ': ' + newDatum[0].job_title, " new datum");
+      console.log(newDatum[0].first_name + ' ' + newDatum[0].last_name);
 
+
+      oldDataList.push(newDatum);
+
+    });
+
+
+      this.setState({dataList: oldDataList});
+  },
+
+  render () {
+    console.log(this.state.dataList)
     if (this.state.dataList.length < 1){
       return (
         <div className='loader'>
@@ -41,7 +59,7 @@ export default React.createClass({
     return (
       <div className='dashboard'>
         <div className='dash-top'></div>
-        <Table dataList={this.state.dataList}/>
+        <Table dataList={this.state.dataList} addCustomerDatum={this.addCustomerDatum}/>
       </div>
     )
   }
