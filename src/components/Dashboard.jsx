@@ -22,8 +22,16 @@ export default React.createClass({
 
   getInitialState () {
     return {
-      dataList: DoggyData
+      dataList: []
     }
+  },
+
+  componentDidMount () {
+     $.get(apiHit, (data) => {
+        this.setState({
+          dataList: data
+        });
+    });
   },
 
   addCustomerDatum () {

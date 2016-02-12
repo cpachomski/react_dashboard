@@ -9,7 +9,7 @@ $light-gray: #AFAFAF;
   top: 30%;
   height: 40%;
   width: 100%;
-  background-color:$dark-blue;
+  background-color:#333;
   overflow: auto;
   zoom: 1;
   font-family: 'verdana' !important;
@@ -17,8 +17,10 @@ $light-gray: #AFAFAF;
   > h3 {
     text-align: center;
     font-size: 30px;
+    color: $dark-blue;
     margin: 15px 0px 10px 0px;
     text-transform: uppercase;
+    letter-spacing: 2px;
   }
 }
 
@@ -31,9 +33,9 @@ $light-gray: #AFAFAF;
   width: 32%;
   float:left;
   padding: 0px;
-  background-color: gray;
-  min-height: 400px;
-
+  background-color: #333;
+  min-height: 200px;
+  transition: background-color 0.3s ease-in;
 
   &.col-2 {
     margin: 0px 1% 0% 2%;
@@ -43,7 +45,10 @@ $light-gray: #AFAFAF;
   }
 
   &:hover {
-    background-color: $blue;
+    -webkit-box-shadow: 2px 10px 82px -24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 10px 82px -24px rgba(0,0,0,0.75);
+    box-shadow: 2px 10px 82px -24px rgba(0,0,0,0.75);
+    background-color: $dark-blue;
     cursor: pointer;
   }
 
@@ -51,7 +56,10 @@ $light-gray: #AFAFAF;
     margin: 10px 0px;
     font-size: 12px;
     color: white;
-    padding: 10 25px;
+    padding: 10px 15px 5px 15px;
+    &:first-child{
+      padding-top: 15px;
+    }
     > span {
       font-weight: bold;
     }

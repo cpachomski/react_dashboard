@@ -20,7 +20,7 @@ $light-gray: #AFAFAF;
       right: 50px;
       height: 56px;
       line-height: 35px;
-      background-color: $blue;
+      background-color: $dark-blue;
       color: white;
       border: none;
       min-width: 200px;
@@ -68,8 +68,8 @@ $light-gray: #AFAFAF;
 
 
   &:active, &:focus {
-    border-color: black !important;
-    color: black;
+    border-color: $dark-blue !important;
+    color: $dark-blue;
 
   }
 }
@@ -89,7 +89,7 @@ $light-gray: #AFAFAF;
       top: 70%;
       width: 100%;
       line-height: 50px;
-      background-color: $blue !important;
+      background-color: $dark-blue !important;
       > span {
         text-transform: uppercase;
         padding: 0px;

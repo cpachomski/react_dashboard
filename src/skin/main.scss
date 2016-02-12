@@ -1,3 +1,5 @@
+$dark-blue: #057672;
+
 //fix
 body {
   margin: 0px;
@@ -7,6 +9,7 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
+  background-color: #333;
 }
 
 
@@ -22,17 +25,17 @@ textarea, input { outline: none !important; }
 
 
 input::-webkit-input-placeholder {
-color: black !important;
+color: $dark-blue !important;
 }
 
 input:-moz-placeholder { /* Firefox 18- */
-color: black !important;
+color: $dark-blue !important;
 }
 
 input::-moz-placeholder {  /* Firefox 19+ */
-color: black !important;
+color: $dark-blue !important;
 }
 
 input:-ms-input-placeholder {
-color: black !important;
+color: $dark-blue !important;
 }
