@@ -1,26 +1,27 @@
 $blue: #2da29d;
-$teal: rgb(203, 223, 223);
+$light-gray: #AFAFAF;
+
 
 .table {
   position: absolute;
   left: 0px;
-  top: 50%;
+  top: 60%;
   height: 50%;
-  overflow-y: scroll;
+  overflow: scroll;
   width: 100%;
 
 
   .row {
     background-color: white;
-    height: 50px;
     &:first-child {
       position: fixed;
-      top: 50%;
+      top: 60%;
       width: 100%;
       line-height: 50px;
       background-color: $blue !important;
       > span {
         text-transform: uppercase;
+        padding: 0px;
       }
     }
 
@@ -28,22 +29,33 @@ $teal: rgb(203, 223, 223);
       margin-top: 50px;
     }
 
+
+
     &:nth-of-type(even){
       background-color: gray;
+
     }
     &:nth-of-type(odd){
-      background-color: $teal;
+      background-color: $light-gray;
+
     }
 
 
 
     > span {
       display: inline-block;
-      width: calc((100% / 6) - 30px);
+      padding: 15px 0px;
+      width: calc((100% / 8) - 30px);
       margin: 0px 15px;
-      text-align: center;
+      text-align: left;
       color: white;
       font-family: 'verdana';
+      &.job-title {
+        width: calc((100% / 6))
+      }
+      &.user-id {
+        width: calc((100% / 4));
+      }
     }
   }
 
