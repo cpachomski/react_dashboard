@@ -6,8 +6,8 @@ $light-gray: #AFAFAF;
 .table-container{
     position: absolute;
     left: 0px;
-    top: 60%;
-    height: 40%;
+    top: 70%;
+    height: 30%;
     overflow: scroll;
     width: 100%;
     z-index: 5;
@@ -16,7 +16,7 @@ $light-gray: #AFAFAF;
 
 .table-search{
   position: fixed;
-  top: calc(60% - 75px);
+  top: calc(70% - 75px);
   left: 15px;
   height: 35px;
   padding-left: 10px;
