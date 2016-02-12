@@ -2,18 +2,35 @@ $blue: #2da29d;
 $light-gray: #AFAFAF;
 
 
+
+.table-container{
+    position: absolute;
+    left: 0px;
+    top: 60%;
+    height: 50%;
+    overflow: scroll;
+    width: 100%;
+    z-index: 5;
+}
+
+.table-search{
+  position: fixed;
+  top: calc(60% - 75px);
+  left: 15px;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 20px;
+  color: gray;
+  border: 2px solid gray;
+  z-index: 100;
+}
+
 .table {
-  position: absolute;
-  left: 0px;
-  top: 60%;
-  height: 50%;
-  overflow: scroll;
-  width: 100%;
 
 
   .row {
     background-color: white;
-    &:first-child {
+    &:first-of-type {
       position: fixed;
       top: 60%;
       width: 100%;
@@ -25,7 +42,7 @@ $light-gray: #AFAFAF;
       }
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       margin-top: 50px;
     }
 
@@ -49,7 +66,7 @@ $light-gray: #AFAFAF;
       color: white;
       font-family: 'verdana';
       &.job-title {
-        width: calc((100% / 6))
+        width: calc((100% / 5) - 30px);
       }
       &.user-id {
         width: calc((100% / 4));

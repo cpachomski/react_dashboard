@@ -9,6 +9,9 @@ body {
   left: 0px;
 }
 
+
+textarea, input { outline: none !important; }
+
 .dash-top{
   position: absolute;
   left: 0px;
