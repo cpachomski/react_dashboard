@@ -7,8 +7,6 @@ import $ from 'jquery';
 
 import tabelStyles from '../skin/table.scss';
 
-
-
 export default React.createClass({
   displayName: 'data-table',
   mixins: [PureRenderMixin],
@@ -29,7 +27,6 @@ export default React.createClass({
 
   filterData (e) {
     e.preventDefault();
-    console.log('filter run');
     const regex = new RegExp(e.target.value, 'i');
     const filtered = this.state.dataList.filter( (customerDatum) => {
       return (customerDatum.get('first_name').search(regex) > -1);
@@ -62,7 +59,7 @@ export default React.createClass({
           onChange={this.filterData}
           placeholder="Search" />
 
-        <button onClick={this.props.addCustomerDatum}> Add Row </button>
+        <button onClick={this.props.addCustomerDatum}> <span> Add Row </span> </button>
 
         <div className='table'>
           <TableRow className='header-row'

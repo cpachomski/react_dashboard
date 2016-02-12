@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Table from './Table.jsx';
 import UpdateState from 'react-addons-update';
+import Stats from './Stats.jsx';
 
 import DoggyData from  '../doggy_data/DogTreatsRUsData.jsx';
 
@@ -28,20 +29,16 @@ export default React.createClass({
   addCustomerDatum () {
     let oldDataList = this.state.dataList;
     $.get(addCustomerHit, (newDatum) => {
-      // console.log(newDatum[0].first_name + ' ' + newDatum[0].last_name + ': ' + newDatum[0].job_title, " new datum");
+      //NOT WORKING :(
       console.log(newDatum[0].first_name + ' ' + newDatum[0].last_name);
-
 
       oldDataList.push(newDatum);
 
     });
-
-
       this.setState({dataList: oldDataList});
   },
 
   render () {
-    console.log(this.state.dataList)
     if (this.state.dataList.length < 1){
       return (
         <div className='loader'>
@@ -58,7 +55,7 @@ export default React.createClass({
 
     return (
       <div className='dashboard'>
-        <div className='dash-top'></div>
+        <Stats dataList={this.state.dataList} />
         <Table dataList={this.state.dataList} addCustomerDatum={this.addCustomerDatum}/>
       </div>
     )
