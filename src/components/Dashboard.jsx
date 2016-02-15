@@ -28,10 +28,14 @@ export default React.createClass({
 
   componentDidMount () {
      $.get(apiHit, (data) => {
+      console.log('data received')
         this.setState({
           dataList: data
         });
+        console.log('state updated');
     });
+    console.log('api hit completed second');
+
   },
 
   addCustomerDatum () {
@@ -50,12 +54,7 @@ export default React.createClass({
     if (this.state.dataList.length < 1){
       return (
         <div className='loader'>
-          <div className="sk-folding-cube">
-            <div className="sk-cube1 sk-cube"></div>
-            <div className="sk-cube2 sk-cube"></div>
-            <div className="sk-cube4 sk-cube"></div>
-            <div className="sk-cube3 sk-cube"></div>
-          </div>
+          <span className='splitting-lines'></span>
           <h3> Loading </h3>
         </div>
       )
