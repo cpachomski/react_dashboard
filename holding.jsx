@@ -19,3 +19,17 @@
             <div className="sk-cube4 sk-cube"></div>
             <div className="sk-cube3 sk-cube"></div>
           </div>
+
+
+
+          componentDidMount () {
+     $.get(apiHit, (data) => {
+
+        this.setState({
+          dataList: data
+        });
+
+    });
+
+
+  },

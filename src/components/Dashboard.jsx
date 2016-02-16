@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Table from './Table.jsx';
 import UpdateState from 'react-addons-update';
 import Stats from './Stats.jsx';
+import Chart from './Chart.jsx';
 
 import DoggyData from  '../doggy_data/DogTreatsRUsData.jsx';
 
@@ -22,21 +23,10 @@ export default React.createClass({
 
   getInitialState () {
     return {
-      dataList: []
+      dataList: DoggyData
     }
   },
 
-  componentDidMount () {
-     $.get(apiHit, (data) => {
-      console.log('data received')
-        this.setState({
-          dataList: data
-        });
-        console.log('state updated');
-    });
-    console.log('api hit completed second');
-
-  },
 
   addCustomerDatum () {
     let oldDataList = this.state.dataList;
@@ -62,6 +52,7 @@ export default React.createClass({
 
     return (
       <div className='dashboard'>
+        <Chart datList={this.state.dataList} />
         <Stats dataList={this.state.dataList} />
         <Table dataList={this.state.dataList} addCustomerDatum={this.addCustomerDatum}/>
       </div>

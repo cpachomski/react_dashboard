@@ -19,7 +19,6 @@ export default React.createClass({
       performedViewedProfile: this.usersWhoPerformed(this.props.dataList, 'viewed_profile'),
       performedViewedItem: this.usersWhoPerformed(this.props.dataList, 'viewed_item'),
       performedPurchasedItem: this.usersWhoPerformed(this.props.dataList, 'purchased_item'),
-      signed_up_to_purchased_item: this.conversionPercentage(this.props.dataList, 'signed_up', 'purchased_item'),
     }
   },
 
@@ -134,9 +133,6 @@ export default React.createClass({
 
   render () {
 
-    $('.stats-col').on('click', (e) => {
-
-    });
 
     return (
       <div className='stats'>
