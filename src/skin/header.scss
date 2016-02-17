@@ -1,0 +1,46 @@
+$dark-blue: #057672;
+
+
+.header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  min-height: 60px;
+  background-color: $dark-blue;
+  color: white !important;
+  overflow: auto;
+  zoom: 1;
+  font-family: 'verdana' !important;
+
+  h1 {
+    margin: 0px 0px 0px 50px;
+    float: left;
+    line-height: 60px;
+
+  }
+
+  > ul {
+    float: right;
+    margin: 0 50px 0px 0px;
+
+    > li {
+      display: inline-block;
+      margin-left: 25px;
+
+      > span {
+        line-height: 60px;
+        vertical-align: middle;
+      }
+
+      > img {
+        line-height: 60px;
+        vertical-align: middle;
+        max-width: 35px;
+        max-height: 35px;
+        border-radius: 50px;
+      }
+    }
+
+  }
+
+}

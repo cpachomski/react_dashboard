@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import Header from './Header.jsx';
 import Table from './Table.jsx';
 import UpdateState from 'react-addons-update';
 import Stats from './Stats.jsx';
@@ -52,7 +53,8 @@ export default React.createClass({
 
     return (
       <div className='dashboard'>
-        <Chart datList={this.state.dataList} />
+        <Header />
+        <Chart dataList={this.state.dataList} />
         <Stats dataList={this.state.dataList} />
         <Table dataList={this.state.dataList} addCustomerDatum={this.addCustomerDatum}/>
       </div>
