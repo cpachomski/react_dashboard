@@ -9,6 +9,7 @@ import Chart from './Chart.jsx';
 import DoggyData from  '../doggy_data/DogTreatsRUsData.jsx';
 
 import loadingStyles from '../skin/loading.scss';
+import normalizeStyles from '../skin/normalize.scss';
 import mainStyles from '../skin/main.scss';
 
 
